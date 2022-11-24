@@ -1,0 +1,195 @@
+--회원
+drop sequence memseq;
+
+create sequence memseq   
+increment by 1
+start with 1
+minvalue 1
+maxvalue 10000
+nocache; 
+
+drop table members;
+create table members(
+	no number primary key,
+	name varchar2(30) not null,
+	nickname varchar2(30) not null,
+	id varchar2(12) not null,
+	password varchar2(20),
+	rrn1 number(6), 
+	rrn2 number(7), 
+	email varchar2(20), 
+	hp1 varchar2(6), 
+	hp2 varchar2(6),
+	hp3 varchar2(6),
+	joindate date default sysdate,
+	exp number default 0				
+);
+
+insert into members(no,name,nickname,id,password,rrn1,rrn2,email,hp1,hp2,hp3,joindate,exp)
+values(memseq.nextval,'관리자','어드민','admin','1234','111111','2222222','nvc@co.com','010','2222','3333','22-07-30',1000);
+
+drop sequence catseq ;
+drop table category ;
+
+create sequence catseq
+increment by 1
+start with 1
+minvalue 1
+maxvalue 10000
+nocache;
+
+--카테고리
+create table category(
+	cnum 	number primary key,
+	cond 	varchar2(10) not null, --new or used
+	brand 	varchar2(20),
+	code 	varchar2(20) not null,
+	cname 	varchar2(50) not null
+);
+
+insert into category values(catseq.nextval,'new','nike','man','jordan');
+
+insert into category values(catseq.nextval,'used','nike','man','jordan');
+
+
+drop sequence catprod ;
+
+create sequence catprod 
+increment by 1
+start with 1
+minvalue 1
+maxvalue 10000
+nocache;
+
+--제품
+drop table product;
+create table product(
+	pnum 		int not null primary key,
+	pname 		varchar2(50) not null,
+	pcategory_fk  	varchar2(20) not null, -- 占쎄퐨占쎄문占쎈립 燁삳똾�믤�⑥쥓�봺
+	pseller	 	varchar2(50),
+	pimage   	varchar2(500),
+	pqty   		int default 1,
+	price   		int default 0,
+	pspec   		varchar2(20), --hot new best normal
+	pcontents 	varchar2(500),
+	point   		int default 0,
+	pinputdate 	varchar2(10) default sysdate,
+	pcond	 	varchar2(10),
+	pbrand 		varchar2(10)
+);
+
+ --주문
+drop sequence orderseq ;
+
+create sequence orderseq 
+increment by 1
+start with 1
+minvalue 0
+maxvalue 10000
+nocache;
+ 
+
+drop table orders ;
+create table orders(
+	orderId number, 
+	sellerId varchar2(30), 
+	memno number,
+	pnum number, 
+	qty number, 
+	amount number
+);
+
+
+--잡담게시판
+drop table board cascade constraints;
+create table board(
+	num number not null primary key,
+	writer varchar2(10) not null,
+	email varchar2(10),
+	subject varchar2(20) not null,
+	reg_date date not null,
+	readcount int default 0,
+	ref number  default 0 not null,
+	re_step number default 0 not null,
+	re_level number default 0 not null,
+	content varchar2(50) not null,
+	ip varchar2(15)  not null
+);
+
+drop sequence board_seq ;
+
+create sequence board_seq
+increment by 1
+start with 1
+minvalue 1
+maxvalue 10000
+nocache;
+
+--댓글
+
+create table reboard(
+	num number not null primary key,
+	renum number not null,
+	writer varchar2(10) not null,	
+	content varchar2(50) not null
+);
+
+drop sequence reboard_seq ;
+
+create sequence reboard_seq
+increment by 1
+start with 1
+minvalue 1
+maxvalue 10000
+nocache;
+
+--데일리룩 게시판
+create table daily_board(
+	num number not null primary key,
+	writer varchar2(10) not null,
+	subject varchar2(20) not null,
+	reg_date date not null,
+	readcount int default 0,
+	image varchar2(150),
+	content varchar2(500) not null
+);
+
+create sequence daily_board_seq
+increment by 1
+start with 1
+minvalue 1
+maxvalue 10000
+nocache;
+
+--데일리 댓글
+drop table daily_reboard ;
+create table daily_reboard(
+	num number not null primary key,
+	renum number not null,
+	writer varchar2(30) not null,	
+	content varchar2(50) not null
+);
+
+
+drop sequence daily_reboard_seq ;
+
+create sequence daily_reboard_seq
+increment by 1
+start with 1
+minvalue 1
+maxvalue 10000
+nocache;
+
+
+
+
+
+
+
+
+
+
+
+
+

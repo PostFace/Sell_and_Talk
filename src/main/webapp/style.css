@@ -1,0 +1,97 @@
+@charset "EUC-KR";
+
+
+
+.App {
+	text-align: center;
+	-webkit-font-smoothing: antialiased;
+	margin: 0 auto;
+	min-width: 1100px;
+	min-height: 100%;
+	height: 100%;
+	width: 1100px;
+	padding: 0 20px;
+}
+
+.NavbarDesktop_header__1GIWM {
+	position: fixed;
+	background: #121517;
+	min-width: 783px;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 100;
+}
+
+.NavbarDesktop_header__1GIWM .NavbarDesktop_width-box__FLokA {
+	display: block;
+	margin: 0 auto;
+	max-width: 1100px;
+}
+
+.NavbarDesktop_header__1GIWM .NavbarDesktop_width-box__FLokA .NavbarDesktop_flex-wrapper__3w9VA
+	{
+	display: -webkit-flex;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-justify-content: space-between;
+	-moz-box-pack: justify;
+	-ms-flex-pack: justify;
+	justify-content: space-between;
+	-webkit-align-items: center;
+	-moz-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	margin: 0 12px;
+	height: 52px;
+}
+
+.head {
+	color: #fff;
+	cursor: pointer;
+	padding: 0;
+	font-size: 12px;
+}
+.NavbarDesktop_nav__38b5p {
+    position: fixed;
+    top: 52px;
+    min-width: 783px;
+    left: 0;
+    width: 100%;
+    z-index: 99;
+    background-color: #121517;
+}
+.NavbarDesktop_nav__38b5p .NavbarDesktop_width-box__FLokA {
+    display: block;
+    margin: 0 auto;
+    max-width: 1100px;
+}
+.NavbarDesktop_nav__38b5p .NavbarDesktop_width-box__FLokA .NavbarDesktop_flex-wrapper__3w9VA {
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-align-items: center;
+    -moz-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-justify-content: space-between;
+    -moz-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    height: 56px;
+    margin-left: 12px;
+}
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+
+.NavbarDesktop_nav__38b5p .NavbarDesktop_width-box__FLokA .NavbarDesktop_flex-wrapper__3w9VA .NavbarDesktop_route__1-3QK {
+    font-size: 14px;
+    color: #343a40;
+    margin: 16px 36px 16px 0;
+}
+th{
+	text-align: center;
+}
